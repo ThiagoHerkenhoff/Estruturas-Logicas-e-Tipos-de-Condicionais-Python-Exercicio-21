@@ -1,0 +1,39 @@
+# 21 - Escreva o menu de opções abaixo. Leia a opção do usuário e execute a operação escolhida.
+# Escreva uma mensagem de erro se a opção fo inválida.
+# Escolha a opção:
+# 1 - Soma de 2 números.
+# 2 - Diferença entre 2 números (maior pelo menor).
+# 3 - Produto entre 2 números.
+# 4 - Divisão entre 2 números (o denominador não pode ser zero).
+
+print("1 - Soma de 2 números")
+print("2 - Diferença entre 2 números (maior pelo menor).")
+print("3 - Produto entre 2 números.")
+print("4 - Divisão entre 2 números (o denominador não pode ser zero).")
+
+opcao = int(input("Informe a opção desejada: "))
+
+if opcao >= 1 and opcao <= 4:
+    n1 = float(input("Informe o primeiro número: "))
+    n2 = float(input("Informe o segundo número: "))
+    if opcao == 1:
+        soma = n1 + n2
+        print(f"A valor da soma entre {n1} e {n2} é de {soma}")
+    elif opcao == 2:
+        if n1 >= n2:
+            d = n1 - n2
+            print(f"A diferença entre {n1} e {n2} é de {d}")
+        else:
+            d = n2 - n1
+            print(f"A diferença entre {n2} e {n1} é de {d}")
+    elif opcao == 3:
+        p = n1 * n2
+        print(f"O poduto ente {n1} e {n2} é de {p}")
+    else:
+        if n2 != 0:
+            div = n1 / n2
+            print(f"O resultado da divisão de {n1} por {n2} é de {div}")
+        else:
+            print("O denominador não pode ser zero")
+else:
+    print("Opção Inválida")
